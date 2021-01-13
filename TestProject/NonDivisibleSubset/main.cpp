@@ -15,28 +15,25 @@ vector<string> split(const string&);
  *  2. INTEGER_ARRAY s
  */
 
-void constructCombinaison(int offset, int cmbSize, vector<int> currentComb, vector<vector<int>>& combs, const int masterListSize) {
-	if(cmbSize == 0) {
+void constructCombinaison(int offset, int cmbSize, vector<int> currentComb, vector<vector<int>>& combs,
+                          const int masterListSize) {
+	if (cmbSize == 0) {
 		combs.push_back(currentComb);
-	}else {
+	}
+	else {
 		for (int idx = offset; idx <= masterListSize - cmbSize; ++idx) {
 			currentComb.push_back(idx);
 			constructCombinaison(offset + 1, cmbSize - 1, currentComb, combs, masterListSize);
 			currentComb.pop_back();
 		}
 	}
-	
+
 }
 
 int nonDivisibleSubset(int k, vector<int> s) {
-	// Commencer par le plus gros vecteur posible
-	// avancer graduellement vers plus petit vecteur
-	// Facon de subdiviser la string pour eliminer des combinaisons?
-	//
+	// Facon de subdiviser le vect pour eliminer des combinaisons?
 
-
-	for (int i = s.size()-1; i > 0; --i) {
-		// Boucle qui remove des elements de sp pour match la size de i
+	for (int i = s.size() - 1; i > 0; --i) {
 		vector<vector<int>> combinaisons;
 		vector<int> combinaison;
 
@@ -44,18 +41,18 @@ int nonDivisibleSubset(int k, vector<int> s) {
 		constructCombinaison(0, i, combinaison, combinaisons, s.size());
 
 
-		for(auto comb : combinaisons) {
+		for (auto comb : combinaisons) {
 			int64_t total = 0;
 
-			for(auto idx : comb) {
+			for (auto idx : comb) {
 				total += s[idx];
 			}
 
-			if(total % k > 0) {
+			if (total % k > 0) {
 				return i;
 			}
 		}
-		
+
 	}
 
 
