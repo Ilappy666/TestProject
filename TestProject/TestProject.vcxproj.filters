@@ -13,13 +13,13 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
-    <Filter Include="Source Files\BigInt">
-      <UniqueIdentifier>{27101f22-8f7f-425f-919b-9f18769edb57}</UniqueIdentifier>
+    <Filter Include="Source Files\NonDivisibleSubset">
+      <UniqueIdentifier>{507caacd-7103-441d-b781-1ef5944ee636}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="BigInt\main.cpp">
-      <Filter>Source Files\BigInt</Filter>
+    <ClCompile Include="NonDivisibleSubset\main.cpp">
+      <Filter>Source Files\NonDivisibleSubset</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

@@ -123,7 +123,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="BigInt\main.cpp" />
+    <ClCompile Include="NonDivisibleSubset\main.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="headers\stdc++.h" />
