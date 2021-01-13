@@ -6,9 +6,8 @@ class BigInt {
 private:
 	vector<uint64_t> number;
 	bool positive = 1;
-	//const uint64_t baseNumber = 1000000000; // 1,000,000,000
-	//const uint64_t baseNumber = 100; // 1,000,000,000
-	const uint64_t baseNumber = 10; // 1,000,000,000
+	const uint64_t baseNumber = 1000000000; // 1,000,000,000
+	const int digitNumber = 9;
 public:
 	BigInt();
 	BigInt(int);
@@ -84,8 +83,11 @@ string BigInt::str() {
 	ostringstream nbrStream;
 
 	reverse(number.begin(), number.end());
-	for (auto& it : number) {
-		nbrStream << it;
+	for (auto it = number.begin(); it != number.end(); ++it) {
+		if(it != number.begin()) {
+			nbrStream << setfill('0') << setw(digitNumber);
+		}
+		nbrStream << *it;
 	}
 
 	return nbrStream.str();
