@@ -48,7 +48,11 @@ int nonDivisibleSubset(int k, vector<int> s) {
 				total += s[idx];
 			}
 
-			if (total % k > 0) {
+			bool nonDivisible = total % k > 0;
+			if (nonDivisible) {
+				for (auto idx : comb) {
+					cout << "idx, number : " << idx << ", " << s[idx] << endl;
+				}
 				return i;
 			}
 		}
@@ -59,20 +63,31 @@ int nonDivisibleSubset(int k, vector<int> s) {
 	return 0;
 }
 
+
 int main() {
 	int n = 4;
-	int k = 3;
+	int k = 7;
 
 	vector<int> s;
-
-	s.push_back(2);
-	s.push_back(2);
-	s.push_back(2);
-	s.push_back(2);
-
+	//             
+	s.push_back(278);
+	s.push_back(576);
+	s.push_back(496);
+	s.push_back(727);
+	s.push_back(410);
+	s.push_back(124);
+	s.push_back(338);
+	s.push_back(149);
+	s.push_back(209);
+	s.push_back(702);
+	s.push_back(282);
+	s.push_back(718);
+	s.push_back(771);
+	s.push_back(575);
+	s.push_back(436);
 
 	int result = nonDivisibleSubset(k, s);
-	int expected = 2;
+	int expected = 11;
 
 	cout << "result : " << result << "\n";
 	cout << "expected : " << expected << "\n";
